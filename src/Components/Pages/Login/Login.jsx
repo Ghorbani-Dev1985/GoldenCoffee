@@ -1,10 +1,5 @@
-import { useUser } from "../../../Context/UsersContext";
-
 const Login = () => {
-    const {isLogin , setIsLogin} = useUser();
-    return ( 
-      {isLogin} , {setIsLogin}
-     );
-}
- 
+  return <div className="font-MorabbaBold text-xl shadow-normal">سلام خوبی</div>
+};
+
 export default Login;
