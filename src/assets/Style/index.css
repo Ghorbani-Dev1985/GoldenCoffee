@@ -34,9 +34,9 @@
 		font-display: swap;
 	}
 	*{
-		@apply p-0 m-0;
+		@apply p-0 m-0 box-border;
 	}
 	body{
-		@apply font-Dana text-base overflow-x-hidden;
+		@apply bg-gray-100 bg-[url('../../assets/Images/headerBgDesktop.png')] bg-no-repeat dark:bg-zinc-800 font-Dana text-base overflow-x-hidden;
 	}
 }
