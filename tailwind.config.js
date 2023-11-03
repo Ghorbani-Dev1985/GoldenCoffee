@@ -1,39 +1,41 @@
 /** @type {import('tailwindcss').Config} */
-const withMT = require("@material-tailwind/react/utils/withMT");
+// const withMT = require("@material-tailwind/react/utils/withMT");
 
-module.exports = withMT({
+module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        "brown": {
+        brown: {
           100: "#ECE0D1",
           300: "#DBC1AC",
           600: "#967259",
           900: "#634832",
         },
-        "zinc" : {
-          700: "#3f3f46",
-          800: "#27272A",
-        }
       },
       boxShadow: {
-        "normal": "0px 1px 10px 0px rgba(0, 0, 0, 0.05)",
+        normal: "0px 1px 10px 0px rgba(0, 0, 0, 0.05)",
       },
       borderRadius: {
-        "4xl" : "2rem",
+        "4xl": "2rem",
       },
       fontFamily: {
-       "Dana" : "Dana",
-       "DanaMd" : "Dana Medium",
-       "DanaBold" : "Dana DemiBold",
-       "Morabba" : "Morabba Light",
-       "MorabbaMd" : "Morabba Medium",
-       "MorabbaBold" : "Morabba Bold",
+        Dana: "Dana",
+        DanaMd: "Dana Medium",
+        DanaBold: "Dana DemiBold",
+        Morabba: "Morabba Light",
+        MorabbaMd: "Morabba Medium",
+        MorabbaBold: "Morabba Bold",
       },
-      letterSpacing : {
-        "tightest" : "-0.065em",
+      letterSpacing: {
+        tightest: "-0.065em",
+      },
+      spacing: {
+        30: "7.5rem",
+      },
+      variants: {
+        scrollbar: ["dark"],
       },
       width: {
         "1p": "1%",
@@ -138,10 +140,12 @@ module.exports = withMT({
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"),
-  function ({addVariant}){
-    addVariant('child' , '& > *');
-    addVariant('child-hover' , '& > *:hover');
-  },
-],
-});
+  plugins: [
+    require("@tailwindcss/forms"),
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+    require("tailwind-scrollbar"),
+  ],
+};
