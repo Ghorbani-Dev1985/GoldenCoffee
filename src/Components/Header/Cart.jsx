@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiChevronLeft } from "react-icons/hi";
+import { HiChevronLeft, HiOutlineX } from "react-icons/hi";
 
 const CartItems = [
   {
@@ -46,9 +46,13 @@ const CartItems = [
 ];
 
 const Cart = () => {
+ 
+
   return (
-    <div
-      className="absolute top-full left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-[400px] p-5 space-y-4 bg-white dark:bg-zinc-700 shadow-normal text-zinc-700 dark:text-white font-Dana text-base
+    <>
+     {/* Desktop Cart */}
+    <section
+      className="hidden md:block absolute top-full left-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-[405px] p-5 space-y-4 bg-white dark:bg-zinc-700 shadow-normal text-zinc-700 dark:text-white font-Dana text-base
         tracking-normal border-t-[3px] border-orange-300 rounded-2xl transition-all delay-75 child:flex"
     >
       <div className="w-full justify-between items-center tracking-tighter">
@@ -62,7 +66,7 @@ const Cart = () => {
         </Link>
       </div>
       {/* Cart Body */}
-      <div className="flex flex-col divide-y divide-gray-100 dark:divide-white/5 child:pt-5 h-96 min-h-max overflow-y-scroll scrollbar scrollbar-thumb-orange-200 dark:scrollbar-thumb-gray-700 scrollbar-track-gray-100 dark:scrollbar-track-gray-400">
+      <div className="flex flex-col divide-y divide-gray-100 dark:divide-white/5 child:pt-5 h-96 min-h-max overflow-y-auto">
         {CartItems.map(
             ({ id, imgSrc, productTitle, discountPrice, productPrice }) => {
                 return (
@@ -91,7 +95,48 @@ const Cart = () => {
           ثبت سفارش
         </Link>
       </div>
-    </div>
+    </section>
+      {/* Mobile Cart */}
+      {/*  ${showMobileCart ? "left-0" : "-left-64"}*/}
+     <section className={` block md:hidden transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen p-4 bg-white dark:bg-zinc-700 z-20`}>
+        <div className="flex justify-between items-center pb-5 border-b border-b-gray-100 dark:border-b-white/10">
+        <HiOutlineX className="text-zinc-600 dark:text-white text-xl" />
+        <p className="text-zinc-700 dark:text-white text-base">سبد خرید</p>
+        </div>
+        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col child:pt-5 h-96 min-h-max overflow-y-auto">
+        {CartItems.map(
+            ({ id, imgSrc, productTitle, discountPrice, productPrice }) => {
+                return (
+                    <CartItemsBody
+                key={id}
+                src={imgSrc}
+                ProductTitle={productTitle}
+                ProductDiscount={discountPrice}
+                ProductPrice={productPrice}
+              />
+              );
+            }
+            )}
+            </div>
+            <div className="w-full flex justify-between gap-x-4 mt-5 mb-4">
+        <Link to="" className="w-28 h-11 flex justify-center items-center bg-teal-600 text-white text-base dark:bg-emerald-500 rounded-xl hover:bg-teal-700 dark:hover:bg-emerald-600">
+          ثبت سفارش
+        </Link>
+        <div className="flex flex-col justify-between">
+          <span className="text-gray-300 font-DanaMd text-xs">
+            مبلغ قابل پرداخت
+          </span>
+          <p className="text-base font-DanaBold dark:text-white">
+            350,000 <span className="text-xs font-normal">تومان</span>
+          </p>
+        </div>
+      </div>
+        </div>
+     </section>
+       {/* Overlay */}
+       <div className={` md:hidden fixed inset-0 w-full h-full bg-black/40 z-10 backdrop-blur-sm`}></div>
+     </>
   );
 };
 
@@ -99,15 +144,15 @@ export default Cart;
 
 function CartItemsBody({ src, ProductTitle, ProductDiscount, ProductPrice }) {
   return (
-    <div className="w-full flex">
-      <img src={src} alt="CartImg" className="w-28 h-28  object-cover" />
+    <div className="w-full flex border-b border-b-gray-100 dark:border-b-white/5 md:border-b-0">
+      <img src={src} alt="CartImg" className="w-20 h-20 md:w-28 md:h-28  object-cover" />
       <div className="flex flex-col justify-between pb-6 gap-y-7">
-        <h4 className="font-medium text-base font-DanaMd dark:text-white line-clamp-2">
+        <h4 className="font-medium text-sm md:text-base font-DanaMd dark:text-white line-clamp-2">
           {ProductTitle}
         </h4>
-        <div className="flex items-center gap-x-2.5">
+        <div className="flex flex-col md:flex-row items-center gap-x-2.5">
           {/* Count Btns */}
-          <div className="flex justify-center items-center border border-gray-300 text-xl text-orange-300 border-solid rounded-[100px] w-24 h-11">
+          <div className="flex justify-center items-center border border-gray-300 text-xl mb-2 md:mb-0 text-orange-300 border-solid rounded-[100px] w-20 h-7 md:w-24 md:h-11">
             <button className="p-2 cursor-pointer">+</button>
             <span className="px-3">2</span>
             <button className="p-2 cursor-pointer">-</button>
@@ -117,7 +162,7 @@ function CartItemsBody({ src, ProductTitle, ProductDiscount, ProductPrice }) {
             <p className="text-teal-600 dark:text-emerald-500 text-xs font-medium tracking-tighter p-1">
               {ProductDiscount} تومان تخفیف
             </p>
-            <p className="text-2xl font-DanaBold dark:text-white">
+            <p className="text-base md:text-2xl font-DanaBold dark:text-white">
               {ProductPrice}
               <span className="text-sm font-normal">تومان</span>
             </p>
@@ -129,3 +174,5 @@ function CartItemsBody({ src, ProductTitle, ProductDiscount, ProductPrice }) {
 }
 
 export { CartItemsBody };
+
+
