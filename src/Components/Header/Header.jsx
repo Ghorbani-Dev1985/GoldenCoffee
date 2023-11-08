@@ -59,7 +59,7 @@ const Header = () => {
       <header className="w-98p lg:w-90p h-24 hidden md:flex items-center bg-black/50 backdrop-blur-[6px] mx-auto px-5 lg:px-10 py-5 rounded-3xl fixed top-9 right-0 left-0 z-50">
         <div className="w-full flex justify-between items-center">
           {/* Logo, Menu */}
-          <nav className="flex items-center gap-x-5 lg:gap-x-9 h-14">
+          <nav className="flex items-center gap-x-5 md:gap-x-2 lg:gap-x-6 h-14">
             <div className="shrink-0">
               <img src={Logo} alt="Golden Coffee" />
             </div>

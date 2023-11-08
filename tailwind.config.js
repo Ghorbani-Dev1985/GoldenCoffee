@@ -6,6 +6,19 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          lg: '0.625rem',
+        }
+      },
+      backgroundImage: {
+          'sm' : 'url("../../assets/Images/headerBgMobile.webp")',
+          'xl' : 'url("../../assets/Images/headerBgDesktop.webp")',
+          'products' : 'url("../../assets/Images/product-bg.png")',
+           'products-linear' : 'linear-gradient(rgba(243,244,246,0.65), rgba(243,244,246,0.65)) , url("../../assets/Images/product-bg.png")',
+      },
       colors: {
         brown: {
           100: "#ECE0D1",
@@ -16,6 +29,7 @@ module.exports = {
       },
       boxShadow: {
         normal: "0px 1px 10px 0px rgba(0, 0, 0, 0.05)",
+        6: "0px 0px 6px 0px rgba(0, 0, 0, 0.30)",
       },
       borderRadius: {
         "4xl": "2rem",
@@ -30,6 +44,9 @@ module.exports = {
       },
       letterSpacing: {
         tightest: "-0.065em",
+      },
+      lineHeight: {
+        'leading-11' : '3rem',
       },
       spacing: {
         30: "7.5rem",
@@ -139,6 +156,13 @@ module.exports = {
         "99p": "99%",
       },
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    }
   },
   plugins: [
     require("@tailwindcss/forms"),
