@@ -170,6 +170,7 @@ function useClickOutside(ref, onClickOutside) {
 
 const MobileNav = () => {
   const [showMobileNav , setShowMobileNav] = useState(false);
+  const [showMobileCart , setShowMobileCart] = useState(false);
   const [showMobileSubMenu, setShowMobileSubMenu] = useState(false);
   const MobileSubMenu = useRef('menu');
   useClickOutside(MobileSubMenu , () => {
@@ -180,7 +181,7 @@ const MobileNav = () => {
     <header className="flex flex-col md:hidden justify-between items-center h-16 p-3 bg-white dark:bg-zinc-700">
       {/* Nav Icon */}
       <div className="w-full flex justify-between items-center">
-      <div >
+      <div onClick={() => setShowMobileNav(!showMobileNav)}>
       <BiMenuAltRight className="text-zinc-700 dark:text-white text-2xl" />
       </div>
       {/* Logo Type */}
@@ -196,10 +197,10 @@ const MobileNav = () => {
           className="w-28 h-10 inline-block dark:hidden"
         />
       </div>
-      <div>
-        <HiOutlineShoppingCart className="text-3xl cursor-pointer text-zinc-700 dark:text-white" />
+      <div onClick={() => setShowMobileCart(!showMobileCart)}>
+        <HiOutlineShoppingCart className="text-2xl cursor-pointer text-zinc-700 dark:text-white" />
       </div>
-        <Cart />
+        <Cart showMobileCart={showMobileCart} setShowMobileCart={setShowMobileCart}/>
       </div>
       {/* Mobile Nav */}
       <nav className={`${showMobileNav ? "right-0" : "-right-64"} transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen pt-3 px-4 bg-white dark:bg-zinc-700 z-20`}>

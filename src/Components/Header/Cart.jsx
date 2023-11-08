@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiChevronLeft, HiOutlineX } from "react-icons/hi";
+import { HiChevronLeft, HiOutlineMinus, HiOutlineX, HiPlus } from "react-icons/hi";
 
 const CartItems = [
   {
@@ -45,7 +45,7 @@ const CartItems = [
   },
 ];
 
-const Cart = () => {
+const Cart = ({showMobileCart , setShowMobileCart}) => {
  
 
   return (
@@ -97,14 +97,15 @@ const Cart = () => {
       </div>
     </section>
       {/* Mobile Cart */}
-      {/*  ${showMobileCart ? "left-0" : "-left-64"}*/}
-     <section className={` block md:hidden transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen p-4 bg-white dark:bg-zinc-700 z-20`}>
+     <section className={`${showMobileCart ? "left-0" : "-left-64"} block md:hidden transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen p-4 bg-white dark:bg-zinc-700 z-20`}>
         <div className="flex justify-between items-center pb-5 border-b border-b-gray-100 dark:border-b-white/10">
+          <div onClick={() => setShowMobileCart(false)}>
         <HiOutlineX className="text-zinc-600 dark:text-white text-xl" />
+          </div>
         <p className="text-zinc-700 dark:text-white text-base">سبد خرید</p>
         </div>
-        <div className="flex flex-col justify-between h-full">
-        <div className="flex flex-col child:pt-5 h-96 min-h-max overflow-y-auto">
+      
+        <div className="flex flex-col child:pt-5 h-full min-h-max overflow-y-auto">
         {CartItems.map(
             ({ id, imgSrc, productTitle, discountPrice, productPrice }) => {
                 return (
@@ -119,7 +120,7 @@ const Cart = () => {
             }
             )}
             </div>
-            <div className="w-full flex justify-between gap-x-4 mt-5 mb-4">
+            <div className="w-full flex justify-between gap-x-4 mt-5 mb-auto">
         <Link to="" className="w-28 h-11 flex justify-center items-center bg-teal-600 text-white text-base dark:bg-emerald-500 rounded-xl hover:bg-teal-700 dark:hover:bg-emerald-600">
           ثبت سفارش
         </Link>
@@ -132,10 +133,10 @@ const Cart = () => {
           </p>
         </div>
       </div>
-        </div>
+     
      </section>
        {/* Overlay */}
-       <div className={` md:hidden fixed inset-0 w-full h-full bg-black/40 z-10 backdrop-blur-sm`}></div>
+       <div onClick={() => setShowMobileCart(false)} className={`${showMobileCart ? "flex" : "hidden"} md:hidden fixed inset-0 w-full h-full bg-black/40 z-10 backdrop-blur-sm`}></div>
      </>
   );
 };
@@ -145,17 +146,17 @@ export default Cart;
 function CartItemsBody({ src, ProductTitle, ProductDiscount, ProductPrice }) {
   return (
     <div className="w-full flex border-b border-b-gray-100 dark:border-b-white/5 md:border-b-0">
-      <img src={src} alt="CartImg" className="w-20 h-20 md:w-28 md:h-28  object-cover" />
+      <img src={src} alt="CartImg" className="w-16 h-16 md:w-28 md:h-28  object-cover" />
       <div className="flex flex-col justify-between pb-6 gap-y-7">
         <h4 className="font-medium text-sm md:text-base font-DanaMd dark:text-white line-clamp-2">
           {ProductTitle}
         </h4>
         <div className="flex flex-col md:flex-row items-center gap-x-2.5">
           {/* Count Btns */}
-          <div className="flex justify-center items-center border border-gray-300 text-xl mb-2 md:mb-0 text-orange-300 border-solid rounded-[100px] w-20 h-7 md:w-24 md:h-11">
-            <button className="p-2 cursor-pointer">+</button>
-            <span className="px-3">2</span>
-            <button className="p-2 cursor-pointer">-</button>
+          <div className="flex justify-center items-center shrink border border-gray-300 md:text-xl mb-2 md:mb-0 px-2 text-orange-300 border-solid rounded-[100px] w-20 h-9 md:w-24 md:h-11">
+            <button className="p-1 md:p-2 cursor-pointer"><HiPlus className="text-xs"/></button>
+            <p className="px-3 h-full flex justify-center items-center mt-1">2</p>
+            <button className="p-1 md:p-2 cursor-pointer"><HiOutlineMinus className="text-xs"/></button>
           </div>
           {/* Cart Price */}
           <div className="flex flex-col justify-between">
@@ -164,7 +165,7 @@ function CartItemsBody({ src, ProductTitle, ProductDiscount, ProductPrice }) {
             </p>
             <p className="text-base md:text-2xl font-DanaBold dark:text-white">
               {ProductPrice}
-              <span className="text-sm font-normal">تومان</span>
+              <span className="text-sm font-normal mr-1">تومان</span>
             </p>
           </div>
         </div>
