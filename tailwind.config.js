@@ -51,7 +51,9 @@ module.exports = {
         'leading-11' : '3rem',
       },
       spacing: {
-        30: "7.5rem",
+        "25" : "6.25rem",
+        "30": "7.5rem",
+        "50" : "12.5rem",
       },
       variants: {
         scrollbar: ["dark"],

@@ -2,6 +2,7 @@ import React from "react";
 import { HiMiniChevronDown } from "react-icons/hi2";
 import Products from "./Products";
 import CategoryBanner from "./CategoryBanner";
+import Categories from "./Categories";
 
 const Main = () => {
   return (
@@ -46,10 +47,12 @@ const Main = () => {
           <HiMiniChevronDown className="text-zinc-700 dark:text-white text-xl" />
         </div>
       </section>
-       {/* Products Section */}
-     <Products />
-     {/* Category Banner */}
-     <CategoryBanner />
+      {/* Products Section */}
+      <Products />
+      {/* Category Banner */}
+      <CategoryBanner />
+      {/* Categories */}
+      <Categories />
     </>
   );
 };
