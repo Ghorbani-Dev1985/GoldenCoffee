@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiChevronLeft, HiOutlineMinus, HiOutlineX, HiPlus } from "react-icons/hi";
+import { HiMiniChevronLeft } from "react-icons/hi2";
 
 const CartItems = [
   {
@@ -62,7 +63,7 @@ const Cart = ({showMobileCart , setShowMobileCart}) => {
           to=""
           className="flex justify-center items-center text-orange-300"
         >
-          مشاهده سبد خرید <HiChevronLeft className="w-5 h-5" />
+          مشاهده سبد خرید  <HiMiniChevronLeft className="text-xl" />
         </Link>
       </div>
       {/* Cart Body */}

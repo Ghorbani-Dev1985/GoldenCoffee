@@ -41,7 +41,7 @@ const Main = () => {
         </svg>
 
         {/* Arrow Circle Bubbles */}
-        <div className="w-[1.875rem] h-[1.875rem] absolute bottom-0 right-0 left-0 mx-auto flex justify-center items-center translate-y-2/4 border-2 border-orange-300 rounded-full">
+        <div className="w-[1.875rem] h-[1.875rem] absolute bottom-0 right-0 left-0 mx-auto flex-center translate-y-2/4 border-2 border-orange-300 rounded-full">
           <HiMiniChevronDown className="text-zinc-700 dark:text-white text-xl" />
         </div>
       </section>

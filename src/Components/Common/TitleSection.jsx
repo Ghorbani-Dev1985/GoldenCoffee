@@ -11,7 +11,7 @@ const TitleSection = ({
   showMoreMobile
 }) => {
   return (
-    <section className="flex justify-between items-end">
+    <section className="flex justify-between items-end mb-5 md:mb-12">
       <div>
         <h2 className="text-zinc-700 dark:text-white font-MorabbaMd text-2xl md:text-5xl leading-11 font-medium">
           {mainTitle}

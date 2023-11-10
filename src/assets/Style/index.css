@@ -43,7 +43,7 @@
     @apply p-0 m-0 box-border;
   }
   body {
-    @apply bg-gray-100 h-[1000rem] dark:bg-zinc-800 font-Dana text-lg overflow-x-hidden scroll-smooth scrollbar scrollbar-thumb-orange-200 dark:scrollbar-thumb-gray-700 scrollbar-track-gray-100 dark:scrollbar-track-gray-400;
+    @apply bg-gray-100 dark:bg-zinc-800 font-Dana text-lg overflow-x-hidden scroll-smooth scrollbar scrollbar-thumb-orange-200 dark:scrollbar-thumb-gray-700 scrollbar-track-gray-100 dark:scrollbar-track-gray-400;
   }
 }
 
@@ -69,4 +69,14 @@
   .scrollbar-medium::-webkit-scrollbar {
     @apply w-1;
   }
+  .flex-center{
+    @apply flex justify-center items-center
+  }
+}
+
+.css-1c99szj-MuiRating-icon{
+  @apply text-gray-300 dark:text-gray-400
+}
+.css-iljtu2-MuiRating-root {
+  direction: ltr;
 }

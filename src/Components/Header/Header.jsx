@@ -1,8 +1,6 @@
 import React, { forwardRef, useCallback, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
-  HiChevronDown,
-  HiChevronUp,
   HiOutlineBriefcase,
   HiOutlineChatAlt,
   HiOutlineDocumentText,
@@ -10,8 +8,8 @@ import {
   HiOutlinePhoneOutgoing,
   HiOutlineShoppingBag,
   HiOutlineShoppingCart,
-  HiOutlineX,
 } from "react-icons/hi";
+import { HiMiniChevronDown, HiMiniChevronUp, HiMiniXMark } from "react-icons/hi2";
 import { BiLogIn, BiMenuAltRight } from "react-icons/bi";
 import DarkMode from "../DarkMode/DarkMode";
 import Cart from "./Cart";
@@ -205,12 +203,12 @@ const MobileNav = () => {
       {/* Mobile Nav */}
       <nav className={`${showMobileNav ? "right-0" : "-right-64"} transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen pt-3 px-4 bg-white dark:bg-zinc-700 z-20`}>
         <div className="flex justify-between items-center pb-5 mb-6 border-b border-b-gray-100 dark:border-b-white/10">
-          <div className="flex justify-center items-center gap-x-3.5">
+          <div className="flex-center gap-x-3.5">
             <img src={Logo} alt="logo" className="w-10 h-10" />
             <img src={LogoTypeDark} alt="logoType" className="w-28 h-10" />
           </div>
           <div onClick={() => setShowMobileNav(false)}>
-            <HiOutlineX className="text-zinc-600 dark:text-white text-xl" />
+            <HiMiniXMark className="text-zinc-600 dark:text-white text-xl"/>
           </div>
         </div>
         {/* Mobile Nav Items */}
@@ -218,7 +216,7 @@ const MobileNav = () => {
           <MenuItem
             to="/"
             title="صفحه اصلی"
-            icon={<HiOutlineHome className="text-xl" />}
+            icon={<HiOutlineHome className="text-xl" /> }
           />
           <div ref={MobileSubMenu}>
           <div
@@ -229,11 +227,11 @@ const MobileNav = () => {
                 : "text-zinc-600 dark:text-white"
             }`}
           >
-            <div className="flex justify-center items-center gap-x-2">
+            <div className="flex-center gap-x-2">
               <HiOutlineShoppingBag className="text-xl" />
               <span>فروشگاه</span>
             </div>
-            <div>{showMobileSubMenu ? <HiChevronDown /> : <HiChevronUp />}</div>
+            <div>{showMobileSubMenu ? <HiMiniChevronDown /> : <HiMiniChevronUp />}</div>
           </div>
           {
             showMobileSubMenu && 
