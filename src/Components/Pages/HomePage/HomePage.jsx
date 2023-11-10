@@ -1,6 +1,7 @@
 import React from "react";
 import { HiMiniChevronDown } from "react-icons/hi2";
 import Products from "./Products";
+import CategoryBanner from "./CategoryBanner";
 
 const Main = () => {
   return (
@@ -47,6 +48,8 @@ const Main = () => {
       </section>
        {/* Products Section */}
      <Products />
+     {/* Category Banner */}
+     <CategoryBanner />
     </>
   );
 };

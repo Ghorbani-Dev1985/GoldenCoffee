@@ -94,7 +94,7 @@ const ProductsItems = [
 const Products = () => {
   const [productStarValue, setProductStarValue] = React.useState(2);
   return (
-    <section className="xl:bg-products-linear xl:dark:bg-products bg-no-repeat bg-cover bg-center pt-8 md:pt-24 lg:pt-48">
+    <section className="xl:bg-products-linear xl:dark:bg-products bg-no-repeat bg-cover bg-center pt-8 md:pt-24 lg:pt-48 mb-8 md:mb-20">
       <div className="container">
         {/* Product Header */}
         <TitleSection
@@ -104,7 +104,7 @@ const Products = () => {
           showMoreMobile="مشاهده همه"
         />
         {/* Product Body Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 md:gap-4 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 md:gap-4">
           {ProductsItems.map(
             ({
               id,
@@ -121,11 +121,12 @@ const Products = () => {
                   key={id}
                   className="bg-white dark:bg-zinc-700 shadow-normal rounded-2xl p-2 md:p-4"
                 >
-                  <div className="relative mb-2 md:mb-5">
+                  <div className="relative mb-2 md:mb-5 h-32 md:h-52">
                     <img
                       src={productImg}
                       alt="گلدن کافی"
                       className="w-32 md:w-auto mx-auto object-cover"
+                      loading="lazy"
                     />
                     {productDiscountPresent > 0 && (
                       <span className="absolute block h-5 md:h-[30px] bg-orange-300 top-0 right-0 font-DanaBold text-xs/[24px] md:text-base/[34px] text-white dark:text-zinc-700 px-2.5 md:px-3.5 rounded-full">
