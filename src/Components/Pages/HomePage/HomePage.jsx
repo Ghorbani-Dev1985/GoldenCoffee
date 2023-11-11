@@ -4,6 +4,7 @@ import Products from "./Products";
 import CategoryBanner from "./CategoryBanner";
 import Categories from "./Categories";
 import Bestselling from "./Bestselling";
+import CoffeeClub from "./CoffeeClub";
 
 const Main = () => {
   return (
@@ -56,7 +57,8 @@ const Main = () => {
       <Categories />
       {/* Bestselling Section */}
       <Bestselling />
-     
+     {/* Coffee Club Section */}
+     <CoffeeClub />
     </>
   );
 };
