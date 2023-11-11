@@ -1,10 +1,11 @@
-import React from "react";
+import React ,{ useState } from "react";
 import TitleSection from "../../Common/TitleSection";
 import {
   HiOutlineArrowsRightLeft,
   HiOutlineShoppingCart,
 } from "react-icons/hi2";
 import { Rating } from "@mui/material";
+
 
 const ProductsItems = [ 
   {
@@ -92,7 +93,7 @@ const ProductsItems = [
 ];
 
 const Products = () => {
-  const [productStarValue, setProductStarValue] = React.useState(2);
+  const [productStarValue, setProductStarValue] = useState(2);
   return (
     <section className="xl:bg-products-linear xl:dark:bg-products bg-no-repeat bg-cover bg-center pt-8 md:pt-24 lg:pt-48 mb-8 md:mb-20">
       <div className="container">
@@ -121,7 +122,7 @@ const Products = () => {
                   key={id}
                   className="bg-white dark:bg-zinc-700 shadow-normal rounded-2xl p-2 md:p-4"
                 >
-                  <div className="relative mb-2 md:mb-5 h-32 md:h-52">
+                  <div className="relative mb-2 md:mb-5 lg:h-[271px] h-32 md:h-52">
                     <img
                       src={productImg}
                       alt="گلدن کافی"
@@ -175,6 +176,7 @@ const Products = () => {
                     </div>
                     <Rating
                       value={productStar}
+                      size="small"
                       onChange={(event, newValue) => {
                         setProductStarValue(newValue);
                       }}

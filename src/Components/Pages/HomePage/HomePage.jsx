@@ -3,6 +3,7 @@ import { HiMiniChevronDown } from "react-icons/hi2";
 import Products from "./Products";
 import CategoryBanner from "./CategoryBanner";
 import Categories from "./Categories";
+import Bestselling from "./Bestselling";
 
 const Main = () => {
   return (
@@ -53,6 +54,9 @@ const Main = () => {
       <CategoryBanner />
       {/* Categories */}
       <Categories />
+      {/* Bestselling Section */}
+      <Bestselling />
+     
     </>
   );
 };
