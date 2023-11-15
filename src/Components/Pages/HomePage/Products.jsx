@@ -5,11 +5,13 @@ import {
   HiOutlineShoppingCart,
 } from "react-icons/hi2";
 import { Rating } from "@mui/material";
+import { Link } from "react-router-dom";
 
 
 const ProductsItems = [ 
   {
     id: 1,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p1.png",
     productName: "قهوه ترک",
     productPrice: 230_000,
@@ -20,6 +22,7 @@ const ProductsItems = [
   },
   {
     id: 2,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p2.png",
     productName: "قهوه ترک بن مانو مقدار 250 گرم با کافئین متوسط",
     productPrice: 99000,
@@ -30,6 +33,7 @@ const ProductsItems = [
   },
   {
     id: 3,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p3.png",
     productName: "قهوه ترک بن مانو مقدار 250 گرم با کافئین بالا",
     productPrice: 190_000,
@@ -40,6 +44,7 @@ const ProductsItems = [
   },
   {
     id: 4,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p4.png",
     productName: " قهوه ترک بن مانو مقدار 250 گرم با کافئین متوسط مصرف عصر",
     productPrice: 175_000,
@@ -50,6 +55,7 @@ const ProductsItems = [
   },
   {
     id: 5,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p5.png",
     productName: " قهوه نورسکا بن مانو ۹ صبح با کافئین زیاد برای مصرف صبح",
     productPrice: 184_000,
@@ -60,6 +66,7 @@ const ProductsItems = [
   },
   {
     id: 6,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p6.png",
     productName: "قهوه نورسکا بن مانو ۶ عصر با کافئین پایین برای مصرف عصر",
     productPrice: 109_000,
@@ -70,6 +77,7 @@ const ProductsItems = [
   },
   {
     id: 7,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p7.png",
     productName:
       " قهوه نورسکا بن مانو ۸ شب بدون کافئین برای مصرف شب بدون بی خوابی",
@@ -81,6 +89,7 @@ const ProductsItems = [
   },
   {
     id: 8,
+    productToLink: "",
     productImg: "../../src/assets/Images/products/p8.png",
     productName:
       " قهوه نورسکا بن مانو ۲ ظهر با کافئین متوسط برای مصرف ساعات بعد از ظهر",
@@ -109,6 +118,7 @@ const Products = () => {
           {ProductsItems.map(
             ({
               id,
+              productToLink,
               productImg,
               productName,
               productPrice,
@@ -118,7 +128,8 @@ const Products = () => {
               productStar,
             }) => {
               return (
-                <section
+                <Link
+                to={productToLink}
                   key={id}
                   className="bg-white dark:bg-zinc-700 shadow-normal rounded-2xl p-2 md:p-4"
                 >
@@ -182,7 +193,7 @@ const Products = () => {
                       }}
                     />
                   </div>
-                </section>
+                </Link>
               );
             }
           )}

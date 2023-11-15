@@ -59,9 +59,9 @@ const Blog = () => {
                  </div>
                 </div>
                 <div className="w-full sm:w-auto flex justify-between sm:items-center flex-col sm:flex-row">
-                <Link to="" className="inline-flex sm:max-w-[11rem] text-zinc-700 dark:text-white font-DanaMd md:font-Dana text-sm/7 mt-2.5 ml-1.5 sm:ml-0 sm:mt-0 md:text-lg line-clamp-2">{blogTitle}</Link>
-                <div className="hidden sm:flex flex-col text-teal-600 dark:text-emerald-500 text-sm text-left ml-[18px] -mt-1 pr-5 border-r border-r-gray-100 dark:border-r-white/10">
-                    <span className="font-DanaBold text-2xl">{blogDateDay}</span>
+                <Link to="" className="sm:max-w-[11rem] text-zinc-700 dark:text-white font-DanaMd md:font-Dana text-sm/7 mt-2.5 ml-1.5 sm:ml-0 sm:mt-0 md:text-lg line-clamp-2">{blogTitle}</Link>
+                <div className="hidden sm:flex flex-col text-teal-600 dark:text-emerald-500 text-sm text-left ml-3 lg:ml-[18px] -mt-1 pr-5 lg:border-r lg:border-r-gray-100 dark:border-r-white/10">
+                    <span className="font-DanaBold text-2xl md:text-xl">{blogDateDay}</span>
                     <span>{blogDateMonth}</span>
                     <span>{blogDateYear}</span>
                 </div>
