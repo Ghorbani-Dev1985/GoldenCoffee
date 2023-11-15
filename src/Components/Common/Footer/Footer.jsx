@@ -2,6 +2,7 @@ import React from "react";
 import { HiMiniChevronUp } from "react-icons/hi2";
 import FooterLogo from '../../../assets/Images/svgs/footeLogo.svg';
 import LogoType from '../../../assets/Images/svgs/footer-logo-type.svg';
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
@@ -24,7 +25,7 @@ const Footer = () => {
       <HiMiniChevronUp className="text-zinc-700 dark:text-white text-xl" />
       </div>
       {/* Footer Content Section */}
-      <section className="flex justify-between w-98p lg:w-90p mx-auto px-4 md:px-0 h-[500px]">
+      <section className="flex flex-col md:flex-row justify-between w-98p lg:w-90p mx-auto px-4 md:px-0">
         {/* Logo And Text */}
         <div>
             {/* Logo */}
@@ -35,7 +36,19 @@ const Footer = () => {
             <p className="max-w-[37.875rem] text-lg md:text-xl/[48px] text-justify">ما برآنیم تا با پیشرو بودن در فرآیند تولید، نوع و کیفیت محصول، خدمات و توزیع، الگویی برای تولیدکنندگان ایرانی باشیم و به مرجع فرهنگ قهوه در ایران تبدیل شویم. می‌پنداریم که نظر مردم ایران و منطقه باید نسبت به کالای ایرانی بهبود یابد و در این راستا با اشتیاق می‌کوشیم.</p>
         </div>
         {/* Menu */}
-        <div></div>
+        <div className="mt-10 md:mt-7">
+            <h5 className="font-DanaBold text-2xl mb-6 md:mb-7">دسترسی سریع</h5>
+            <div className="flex flex-col flex-wrap gap-y-2.5 md:gap-y-5 gap-x-10 md:gap-x-16 h-44">
+            <FooterLinkMenu linkTo="" linkTitle="حریم خصوصی" />
+            <FooterLinkMenu linkTo="" linkTitle="عودت کالا " />
+            <FooterLinkMenu linkTo="" linkTitle="شرایط استفاده " />
+            <FooterLinkMenu linkTo="" linkTitle=" ثبت سفارش" />
+            <FooterLinkMenu linkTo="" linkTitle="پرسش های متداول" />
+            <FooterLinkMenu linkTo="" linkTitle=" فرصت های شغلی" />
+            <FooterLinkMenu linkTo="" linkTitle=" ضمانت نامه ها " />
+            <FooterLinkMenu linkTo="" linkTitle=" ارتباط با ما " />
+            </div>
+        </div>
         {/* Contact US */}
         <div></div>
       </section>
@@ -44,3 +57,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const FooterLinkMenu = ({linkTo , linkTitle}) => {
+    return(
+      <Link to={linkTo} className="flex items-center gap-x-2 md:gap-x-3 text-base md:text-xl hover:text-orange-300 transition-colors">
+        <span className="inline-block w-2 md:w-2.5 h-1 bg-current rounded-full"></span>
+        {linkTitle}
+      </Link>
+    )
+}
+export {FooterLinkMenu}
