@@ -1,8 +1,10 @@
 import React from "react";
-import { HiMiniChevronUp } from "react-icons/hi2";
+import { HiMiniChevronUp, HiOutlineEnvelope, HiOutlineMapPin } from "react-icons/hi2";
 import FooterLogo from '../../../assets/Images/svgs/footeLogo.svg';
 import LogoType from '../../../assets/Images/svgs/footer-logo-type.svg';
 import { Link } from "react-router-dom";
+import { HiOutlinePhone } from "react-icons/hi";
+import { BiLogoInstagram, BiLogoTelegram } from "react-icons/bi";
 
 
 const Footer = () => {
@@ -25,7 +27,7 @@ const Footer = () => {
       <HiMiniChevronUp className="text-zinc-700 dark:text-white text-xl" />
       </div>
       {/* Footer Content Section */}
-      <section className="flex flex-col md:flex-row justify-between w-98p lg:w-90p mx-auto px-4 md:px-0">
+      <section className="flex flex-col lg:flex-row justify-between flex-wrap sm:w-94p lg:w-90p mx-auto px-4 md:px-0">
         {/* Logo And Text */}
         <div>
             {/* Logo */}
@@ -33,12 +35,12 @@ const Footer = () => {
             <img src={FooterLogo} alt="گلدن کافی" />
             <img src={LogoType} alt="گلدن کافی" />
             </div>
-            <p className="max-w-[37.875rem] text-lg md:text-xl/[48px] text-justify">ما برآنیم تا با پیشرو بودن در فرآیند تولید، نوع و کیفیت محصول، خدمات و توزیع، الگویی برای تولیدکنندگان ایرانی باشیم و به مرجع فرهنگ قهوه در ایران تبدیل شویم. می‌پنداریم که نظر مردم ایران و منطقه باید نسبت به کالای ایرانی بهبود یابد و در این راستا با اشتیاق می‌کوشیم.</p>
+            <p className="max-w-[37.875rem] md:max-w-full xl:max-w-[37.875rem] text-lg md:text-xl/[48px] text-justify">ما برآنیم تا با پیشرو بودن در فرآیند تولید، نوع و کیفیت محصول، خدمات و توزیع، الگویی برای تولیدکنندگان ایرانی باشیم و به مرجع فرهنگ قهوه در ایران تبدیل شویم. می‌پنداریم که نظر مردم ایران و منطقه باید نسبت به کالای ایرانی بهبود یابد و در این راستا با اشتیاق می‌کوشیم.</p>
         </div>
         {/* Menu */}
         <div className="mt-10 md:mt-7">
             <h5 className="font-DanaBold text-2xl mb-6 md:mb-7">دسترسی سریع</h5>
-            <div className="flex flex-col flex-wrap gap-y-2.5 md:gap-y-5 gap-x-10 md:gap-x-16 h-44">
+            <div className="grid grid-cols-2 gap-y-2.5 md:gap-y-5 gap-x-10 md:gap-x-16">
             <FooterLinkMenu linkTo="" linkTitle="حریم خصوصی" />
             <FooterLinkMenu linkTo="" linkTitle="عودت کالا " />
             <FooterLinkMenu linkTo="" linkTitle="شرایط استفاده " />
@@ -50,7 +52,38 @@ const Footer = () => {
             </div>
         </div>
         {/* Contact US */}
-        <div></div>
+        <div>
+        <h5 className="font-DanaBold text-2xl mb-6 md:mb-7"> در تماس باشیم</h5>
+        <div>
+            <div className="md:text-xl mb-6 md:mb-10">
+                <span className="flex-center gap-x-2 md:gap-x-3 mb-4">
+            <HiOutlineMapPin className="text-xl md:text-2xl shrink-0" />
+                بلوار میرداماد،خیابان البرز،کوچه قبادیان شرقی،پلاک ۳۳
+                </span>
+            <div className="flex flex-wrap gap-x-3 gap-y-4 font-DanaMd">
+                <a href="mailto:info@Coffee.com" className="flex items-center gap-x-2 md:gap-x-3 text-orange-300">
+                <HiOutlineEnvelope />
+                info@Coffee.com
+                </a>
+                <div className="flex-center gap-x-2 md:gap-x-3">
+                <HiOutlinePhone className="text-xl md:text-2xl" />
+                 <a href="tel:989021236628">09021236628</a>
+                 <a href="tel:98216789012">021-6789012</a>
+                </div>
+            </div>
+            </div>
+            <div className="flex gap-x-1.5 md:gap-x-6 font-DanaMd md:text-xl">
+                <a className="flex-center flex-grow h-12 gap-x-2 border border-orange-200 text-orange-200 rounded-xl" href="https://www.instagram.com/golden_coffee" target="_blank">
+            <BiLogoInstagram className="text-2xl md:text-4xl"/>
+            <span className="dir-ltr">@golden_coffee</span>
+                </a>
+                <a className="flex-center flex-grow gap-x-2 text-zinc-700 bg-gradient-to-tr from-orange-200 to-orange-300 rounded-xl" href="https://t.me/golden_coffee" target="_blank">
+            <BiLogoTelegram className="text-2xl md:text-4xl"/>
+            <span className="dir-ltr"> @golden_coffee</span>
+                </a>
+            </div>
+        </div>
+        </div>
       </section>
     </footer>
   );

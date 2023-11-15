@@ -66,6 +66,10 @@
   .swiper-button{
     @apply w-9 h-9 md:w-10 md:h-10 bg-white dark:bg-zinc-700 text-zinc-700 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-white dark:hover:text-zinc-700 cursor-pointer shadow-normal transition-colors;
   }
+  .dir-ltr{
+    direction: ltr;
+    text-align: left;
+  }
   .Services::after, .Services::before{
     content: "";
     display: block;
