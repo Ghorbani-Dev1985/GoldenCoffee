@@ -6,6 +6,7 @@ import Categories from "./Categories";
 import Bestselling from "./Bestselling";
 import CoffeeClub from "./CoffeeClub";
 import Blog from "./Blog";
+import OrderByPhone from "./OrderByPhone";
 
 const Main = () => {
   return (
@@ -62,6 +63,8 @@ const Main = () => {
      <CoffeeClub />
      {/* Blog Section */}
      <Blog />
+     {/* Order By Phone */}
+     <OrderByPhone />
     </>
   );
 };
