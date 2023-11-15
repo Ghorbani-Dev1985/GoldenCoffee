@@ -169,8 +169,6 @@ const Bestselling = () => {
                 spaceBetween: 20,
               },
           }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
             {ProductsItems.map(
               ({
