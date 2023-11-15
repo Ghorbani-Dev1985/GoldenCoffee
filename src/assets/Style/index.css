@@ -66,8 +66,24 @@
   .swiper-button{
     @apply w-9 h-9 md:w-10 md:h-10 bg-white dark:bg-zinc-700 text-zinc-700 dark:text-white rounded-full hover:bg-gray-300 dark:hover:bg-white dark:hover:text-zinc-700 cursor-pointer shadow-normal transition-colors;
   }
-  .dir-ltr{
-    direction: ltr;
+  .Services::after, .Services::before{
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    background-color: #D1D5DB;
+  }
+  html.dark .Services::after, html.dark .Services::before{
+    background-color: rgba(255,255,255,0.1);
+  }
+  .Services::after{
+    width: 1px;
+    height: calc(100% + 1.25rem);
+  }
+  .Services::before{
+   width: calc(100% - 2rem);
+   height: 1px;
   }
 }
 
