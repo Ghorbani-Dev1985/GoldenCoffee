@@ -84,6 +84,21 @@ const Footer = () => {
             </div>
         </div>
         </div>
+        {/* Line before Copyright */}
+        <p className="w-full h-px bg-white/10 mt-[3.38rem] mb-[2.94rem]"></p>
+        {/* Copyright */}
+        <div className="w-full flex flex-wrap justify-between items-center gax-4 font-DanaMd text-sm/5 md:text-base">
+        <div className="flex items-center gap-x-2.5 mb-4 md:mb-0">
+          <div className="flex-center shrink-0 w-8 h-8 rounded-full border border-white/10">
+            <div className="flex-center w-5 h-5 rounded-full border border-white/20">
+              <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-t from-orange-200 to-orange-300"></div>
+            </div>
+          </div>
+          <p>تمام حقوق مادی و معنوی متعلق به <span className="text-orange-200">گلدن کافی</span> میباشد
+           و هر گونه کپی برداری مجاز نمیباشد.</p>
+        </div>
+         <span className="dir-ltr mr-auto">Copyright © 2023 Golden Coffee. All rights reserved.</span>
+        </div>
       </section>
     </footer>
   );

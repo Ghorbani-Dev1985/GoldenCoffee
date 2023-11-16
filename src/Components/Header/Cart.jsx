@@ -25,25 +25,25 @@ const CartItems = [
     discountPrice: "25.500",
     productPrice: "275,000", 
   },
-  {
-    id: 4,
-    imgSrc: "../../src/assets/Images/products/p4.png",
-    productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
-    discountPrice: "25.500",
-    productPrice: "275,000", 
-  },  {
-    id: 5,
-    imgSrc: "../../src/assets/Images/products/p5.png",
-    productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
-    discountPrice: "25.500",
-    productPrice: "275,000", 
-  },  {
-    id: 6,
-    imgSrc: "../../src/assets/Images/products/p6.png",
-    productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
-    discountPrice: "25.500",
-    productPrice: "275,000", 
-  },
+  // {
+  //   id: 4,
+  //   imgSrc: "../../src/assets/Images/products/p4.png",
+  //   productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
+  //   discountPrice: "25.500",
+  //   productPrice: "275,000", 
+  // },  {
+  //   id: 5,
+  //   imgSrc: "../../src/assets/Images/products/p5.png",
+  //   productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
+  //   discountPrice: "25.500",
+  //   productPrice: "275,000", 
+  // },  {
+  //   id: 6,
+  //   imgSrc: "../../src/assets/Images/products/p6.png",
+  //   productTitle: "قهوه اسپرسو بن مانو مدل پریسکا 750 گرمی با تخیفیف ویژه و ارسال رایگان مخصوص استفاده در عصر با کافئین متوسط",
+  //   discountPrice: "25.500",
+  //   productPrice: "275,000", 
+  // },
 ];
 
 const Cart = ({showMobileCart , setShowMobileCart}) => {
@@ -98,7 +98,7 @@ const Cart = ({showMobileCart , setShowMobileCart}) => {
       </div>
     </section>
       {/* Mobile Cart */}
-     <section className={`${showMobileCart ? "left-0" : "-left-64"} block md:hidden transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto min-h-screen p-4 bg-white dark:bg-zinc-700 z-20`}>
+     <section className={`${showMobileCart ? "left-0" : "-left-64"} block md:hidden transition-all ease-linear duration-500 fixed top-0 bottom-0 w-64 overflow-y-auto p-4 bg-white dark:bg-zinc-700 z-20`}>
         <div className="flex justify-between items-center pb-5 border-b border-b-gray-100 dark:border-b-white/10">
           <div onClick={() => setShowMobileCart(false)}>
         <HiOutlineX className="text-zinc-600 dark:text-white text-xl" />
@@ -120,8 +120,7 @@ const Cart = ({showMobileCart , setShowMobileCart}) => {
               );
             }
             )}
-            </div>
-            <div className="w-full flex justify-between gap-x-4 mt-5 mb-auto">
+            <div className="w-full flex justify-between gap-x-4 mb-10 mt-auto">
         <Link to="" className="w-28 h-11 flex justify-center items-center bg-teal-600 text-white text-base dark:bg-emerald-500 rounded-xl hover:bg-teal-700 dark:hover:bg-emerald-600">
           ثبت سفارش
         </Link>
@@ -134,6 +133,7 @@ const Cart = ({showMobileCart , setShowMobileCart}) => {
           </p>
         </div>
       </div>
+            </div>
      
      </section>
        {/* Overlay */}
